@@ -1,5 +1,5 @@
-getdata_proj
-============
+Getting and Cleaning Data Project
+=================================
 
 ## Transformation details
 
@@ -11,9 +11,9 @@ As suggested on the statement of the project :
 4. Appropriately labels the data set with descriptive activity names.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## How ``run_analysis.R`` implements the above steps:
+## ``run_analysis.R`` implements the above steps in the following way:
 
-* Load `plyr` package.
+* Load `plyr` package, for some handy tools.
 * If data is not available creates a `data` folder inside the *working directory* and downloads and saves there data with the name `UCI HAR Dataset.zip`.
 * Unzip data on Working Directory.
 * Load `features` and `activity_labels` from root of `UCI HAR Dataset` folder.
