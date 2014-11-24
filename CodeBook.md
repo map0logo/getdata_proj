@@ -33,3 +33,58 @@ The following files are available for train and test data. Their descriptions ar
 - 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
+## Fields
+
+The features come from accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ, captured at a constant rate of 50 Hz. Filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
+
+Acceleration signal was separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+Body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Fast Fourier Transform (FFT) was applied to some signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+ time domain | frequency domain |
+ ------------|------------------|
+tBodyAcc-XYZ | fBodyAcc-XYZ |
+tGravityAcc-XYZ | --- |
+tBodyAccJerk-XYZ |  fBodyAccJerk-XYZ |
+tBodyGyro-XYZ | fBodyGyro-XYZ |
+tBodyGyroJerk-XYZ | ---- |
+tBodyAccMag | fBodyAccMag |
+tGravityAccMag | ---- |
+tBodyAccJerkMag | fBodyAccJerkMag |
+tBodyGyroMag | fBodyGyroMag |
+tBodyGyroJerkMag | fBodyGyroJerkMag |
+
+The set of variables that were estimated from these signals are: 
+
+ Variable | description |
+ ---------|-------------|
+mean() | Mean value |
+std() | Standard deviation |
+mad() | Median absolute deviation |
+max() | Largest value in array |
+min() | Smallest value in array |
+sma() | Signal magnitude area |
+energy() | Energy measure. Sum of the squares divided by the number of values |
+iqr() | Interquartile range |
+entropy() | Signal entropy |
+arCoeff() | Autorregresion coefficients with Burg order equal to 4 |
+correlation() | correlation coefficient between two signals |
+maxInds() | index of the frequency component with largest magnitude |
+meanFreq() | Weighted average of the frequency components to obtain a mean frequency |
+skewness() | skewness of the frequency domain signal |
+kurtosis() | kurtosis of the frequency domain signal |
+bandsEnergy() | Energy of a frequency interval within the 64 bins of the FFT of each window |
+angle() | Angle between to vectors |
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+- gravityMean
+- tBodyAccMean
+- tBodyAccJerkMean
+- tBodyGyroMean
+- tBodyGyroJerkMean
